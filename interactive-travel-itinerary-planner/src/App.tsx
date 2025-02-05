@@ -14,6 +14,28 @@ const App: React.FC = () => {
         <div className="map-background"></div>       {/* background image given position absolute */}
         <h1 className='welcome-heading'>Welcome to TripMate</h1>
 
+        {/* Introductory Message */}
+        <div className="cta-container">
+          <p className="intro-text">
+            🌍 Your Next Adventure Starts Here 🌏
+            <br/>
+            Let AI craft your perfect journey. Spend less time planning 
+            and more time <i>experiencing</i> the world.
+            <br/>
+            <span className="highlight-text">
+              Start your stress-free travel planning in just one click!
+            </span>
+          </p>
+          
+          {/* CTA Button */}
+          <a 
+            href="/your-product-url" // Replace with actual URL
+            className="cta-button"
+          >
+            Start Planning Now →
+          </a>
+        </div>
+
         {cities.map((city) => (
           <span 
             key={city.name}
