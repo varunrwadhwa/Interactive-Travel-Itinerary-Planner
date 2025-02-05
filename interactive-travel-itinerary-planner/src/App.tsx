@@ -1,8 +1,8 @@
 import './App.css'
 
 const cities = [
-  { name: 'Tokyo', x: '20%', y: '20%' },
-  { name: 'Paris', x: '30%', y: '50%' },
+  { name: 'Tokyo', x: '15%', y: '20%' },
+  { name: 'Paris', x: '80%', y: '10%' },
   { name: 'New York', x: '60%', y: '30%' }
 ];
 
