@@ -13,7 +13,29 @@ const App: React.FC = () => {
       <div className="hero-section">       {/* hero section position relative to create stacking context  */}
         <div className="map-background"></div>       {/* background image given position absolute */}
         <h1 className='welcome-heading'>Welcome to TripMate</h1>
+
+        {cities.map((city) => (
+          <span 
+            key={city.name}
+            className="city-pin"
+            style={{ left: city.x, top: city.y }}
+          >
+            📍
+          </span>
+        ))}
+
+        {/* Airplanes */}
+        <div className="airplane" style={{ top: '15%' }}>🛫</div>
+        <div className="airplane" style={{ top: '35%', animationDelay: '2s' }}>🛫</div>
+        <div className="airplane" style={{ top: '70%', animationDelay: '5s' }}>🛫</div>
+        
+        {/* Clouds */}
+        <div className="cloud" style={{ left: '10%' }}>☁️</div>
+        <div className="cloud" style={{ left: '50%', animationDelay: '3s' }}>☁️</div>
+        <div className="cloud" style={{ left: '80%', animationDelay: '7s' }}>☁️</div>
+         
       </div>
+
 
       {/* Content Section */}
       <div className="content-section">
@@ -35,6 +57,7 @@ const App: React.FC = () => {
             <br/>
             With TripMate, your journey is smooth, well-planned, and stress-free. Say goodbye to messy travel notes and last-minute confusion—TripMate ensures a reliable, hassle-free, and fun travel experience.
         </p>
+        <b>🌍 Wherever You Go, TripMate Has You Covered! 🌍</b>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@
 .welcome-heading {
   position: sticky;
   color: rgb(255, 255, 255); /* Text color */
-  font-size: 100px;
+  font-size: clamp(1.5rem, 5vw, 3rem);;
   text-align: center; /* Center the text */
   margin-top: 40vh; /* Adjust vertical alignment */
 }
@@ -51,72 +51,57 @@
   padding: 20px;
 }
 
-/* background-size: cover; */
-/* Floating Elements Animations */
-
-/* City Markers (📍) - Bouncing */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+/* Animations */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.floating-marker {
-  font-size: 30px;
-  animation: bounce 3s ease-in-out infinite;
+@keyframes glide {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100vw); }
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-100%); }
+}
+
+/* Element Styles */
+.city-pin {
   position: absolute;
+  font-size: 4rem;
+  animation: bob 2s ease-in-out infinite;
+  pointer-events: none;
 }
 
-/* Airplanes (✈️) - Moving Left to Right */
-@keyframes floatLeftRight {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(20px);
-  }
-}
-
-.plane {
-  font-size: 30px;
-  animation: floatLeftRight 5s ease-in-out infinite;
+.city-pin::before {
+  content: '';
   position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background: radial-gradient(circle at center, rgba(227, 70, 70, 0.8) 0%, rgba(16, 205, 215, 0) 70%);
+  z-index: -1;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: glow 2s ease-in-out infinite;
 }
 
-/* Clouds (☁️) - Floating Up */
-@keyframes cloudFloat {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+.airplane {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: 900;
+  animation: glide 15s linear infinite;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .cloud {
-  font-size: 50px;
   position: absolute;
-  animation: cloudFloat 10s linear infinite;
-}
-
-/* Positioning the elements */
-.city-markers {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-}
-
-.planes {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-}
-
-.clouds {
-  position: absolute;
-  top: 10%;
-  left: 70%;
+  font-size: 4rem;
+  animation: float 20s linear infinite;
+  /* opacity: 0.7; */
+  pointer-events: none;
+  bottom: 0;
 }
