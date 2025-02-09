@@ -78,9 +78,9 @@
 .city-pin::before {
   content: '';
   position: absolute;
-  width: 3rem;
-  height: 3rem;
-  background: radial-gradient(circle at center, rgba(227, 70, 70, 0.8) 0%, rgba(16, 205, 215, 0) 70%);
+  width: 5rem;
+  height: 5rem;
+  background: radial-gradient(circle at center, rgba(255, 253, 253, 0.8) 0%, rgba(204, 204, 204, 0) 70%);
   z-index: -1;
   top: 80%;
   left: 50%;
