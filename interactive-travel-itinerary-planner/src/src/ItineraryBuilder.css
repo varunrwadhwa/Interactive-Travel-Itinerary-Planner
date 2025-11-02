@@ -1,0 +1,205 @@
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #74ebd5, #acb6e5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.itinerary-page {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 900px;
+  margin-bottom: 3rem; /* Prevent cutoff at the bottom */
+  position: relative;
+  z-index: 1;
+}
+
+.itinerary-page h1 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #007bff, #00c6ff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shineText 4s linear infinite;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.itinerary-page h3 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.day-block {
+  background-color: #f5f8ff;
+  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.day-block h2 {
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.day-block input {
+  color: #222; /* dark text */
+  background-color: #fff; /* white background */
+  width: 100%;
+  max-width: 700px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.day-block input::placeholder {
+  color: #777;
+}
+
+.day-block input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Keep Add Activity button aligned under inputs consistently */
+.day-block button {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.day-block button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+}
+
+.itinerary-page > button {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.itinerary-page > button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.6);
+}
+
+@keyframes shineText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating fun emojis animation */
+.floating-emojis {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.floating-emojis span {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8;
+  animation: floatEmoji 14s linear infinite;
+}
+
+@keyframes floatEmoji {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Random positions and speeds */
+.floating-emojis span:nth-child(1) {
+  left: 10%;
+  animation-duration: 16s;
+  animation-delay: 0s;
+}
+.floating-emojis span:nth-child(2) {
+  left: 25%;
+  animation-duration: 18s;
+  animation-delay: 3s;
+}
+.floating-emojis span:nth-child(3) {
+  left: 45%;
+  animation-duration: 20s;
+  animation-delay: 6s;
+}
+.floating-emojis span:nth-child(4) {
+  left: 65%;
+  animation-duration: 22s;
+  animation-delay: 9s;
+}
+.floating-emojis span:nth-child(5) {
+  left: 80%;
+  animation-duration: 19s;
+  animation-delay: 5s;
+}
+.floating-emojis span:nth-child(6) {
+  left: 90%;
+  animation-duration: 21s;
+  animation-delay: 2s;
+}

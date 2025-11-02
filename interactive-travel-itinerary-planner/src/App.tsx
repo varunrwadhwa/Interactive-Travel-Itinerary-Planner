@@ -1,4 +1,7 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import TripCreationForm from './src/tripCreationForm';
+import ItineraryBuilder from './src/ItineraryBuilder'; // <-- add this import
 
 const cities = [
   { name: 'Tokyo', x: '15%', y: '20%' },
@@ -6,7 +9,9 @@ const cities = [
   { name: 'New York', x: '60%', y: '30%' }
 ];
 
-const App: React.FC = () => {
+const HeroPage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div id="main-container">
       {/* Hero Section */}
@@ -28,9 +33,9 @@ const App: React.FC = () => {
           </p>
 
           {/* CTA Button */}
-          <a href="/your-product-url" className="cta-button">
+          <button onClick={() => navigate('/create')} className="cta-button">
             Start Planning Now →
-          </a>
+          </button>
         </div>
 
         {/* City Pins */}
@@ -78,6 +83,18 @@ const App: React.FC = () => {
         <b>🌍 Wherever You Go, TripMate Has You Covered! 🌍</b>
       </div>
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HeroPage />} />
+        <Route path="/create" element={<TripCreationForm />} />
+        <Route path="/itinerary" element={<ItineraryBuilder />} /> {/* <-- new route */}
+      </Routes>
+    </Router>
   );
 };
 
