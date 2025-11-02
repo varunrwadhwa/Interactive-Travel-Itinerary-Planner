@@ -84,6 +84,19 @@ const HeroPage: React.FC = () => {
         </p>
         <b>🌍 Wherever You Go, TripMate Has You Covered! 🌍</b>
       </div>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} TripMate — Plan Smarter, Travel Better 🌍</p>
+      </footer>
+
+      {/* Scroll to Top Button */}
+      <button
+        className="scroll-top"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        ↑
+      </button>
     </div>
   );
 };
