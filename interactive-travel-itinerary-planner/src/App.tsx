@@ -14,9 +14,11 @@ const HeroPage: React.FC = () => {
 
   return (
     <div id="main-container">
+      {/* Background Layer */}
+      <div className="map-background"></div>
+
       {/* Hero Section */}
       <div className="hero-section">
-        <div className="map-background"></div>
         <h1 className="welcome-heading">Welcome to TripMate</h1>
 
         {/* Introductory Message */}

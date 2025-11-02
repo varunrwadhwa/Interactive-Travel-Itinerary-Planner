@@ -203,3 +203,181 @@ body {
   animation-duration: 21s;
   animation-delay: 2s;
 }
+
+.trip-summary-bar {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #dbe2ff;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+  z-index: 2;
+}
+
+.trip-summary-bar p {
+  margin: 0.3rem 0.8rem;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.trip-summary-bar strong {
+  color: #222;
+  -webkit-text-fill-color: #222;
+}
+
+.trip-summary-bar::before {
+  content: "✨ Trip Summary ✨";
+  position: absolute;
+  top: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #007bff;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+
+/* Activity row styling */
+.activity-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  width: 100%;
+}
+
+.activity-row input {
+  flex: 1;
+}
+
+/* Delete activity button */
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: #ff4d4f;
+}
+
+/* Delete day button */
+.delete-day-btn {
+  background: linear-gradient(90deg, #ff4d4f, #ff7875);
+  color: white;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.delete-day-btn:hover {
+  background: linear-gradient(90deg, #ff7875, #ff4d4f);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 77, 79, 0.4);
+}
+/* Sticky top navigation bar */
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping when screen is small */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow-x: hidden; /* prevents export button cutoff */
+}
+
+.top-navbar h2 {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.nav-actions button {
+  padding: 0.45rem 1rem; /* slightly smaller padding */
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.nav-actions button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.5);
+}
+
+/* Adjust page padding to avoid overlap with navbar */
+.itinerary-page {
+  margin-top: 6rem;
+}
+
+/* Shrink header on scroll */
+.top-navbar.shrink {
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  transition: padding 0.3s ease, background 0.3s ease;
+}
+
+.top-navbar.shrink h2 {
+  font-size: 1.2rem;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .top-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .nav-actions button {
+    width: auto;
+    margin: 50%;
+    
+  }
+}
